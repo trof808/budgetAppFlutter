@@ -15,5 +15,26 @@ https://dribbble.com/shots/6259293-Sleep-Tracker-App/attachments
 
 ## Flutter
 
-1. Убрал основу
+1. Убрал MaterialApp. Изучаем основные виджеты Row и Column. Рассказать про них, особенность кастомизации, направление и тд
+https://docs.flutter.dev/development/ui/layout
+ Note: Row and Column are basic primitive widgets for horizontal and vertical layouts—these low-level widgets allow for maximum customization. Flutter also offers specialized, higher level widgets that might be sufficient for your needs. For example, instead of Row you might prefer ListTile, an easy-to-use widget with properties for leading and trailing icons, and up to 3 lines of text. Instead of Column, you might prefer ListView, a column-like layout that automatically scrolls if its content is too long to fit the available space. For more information, see Common layout widgets.
 2. Ошибка No Directionality widget found
+3. Ошибка Vertical RenderFlex with CrossAxisAlignment.start has a null textDirection, so the alignment cannot be resolved
+Важный поинт по поводу направления контента виджетов Column и Row
+https://api.flutter.dev/flutter/widgets/Column/Column.html
+4. Добавил градиент для фона
+5. Далее я искал как сделать расстояние между элементами в колонке (Пока не нашел)
+https://stackoverflow.com/questions/52774921/space-between-columns-children-in-flutter
+6. Разделил на компоненты Stateless and Statefull widgets
+
+
+Добавление картинок и иконок
+Футер
+Шрифты
+Анимация
+Состояние приложения
+
+## День 1
+За первый день, я разобрался как создавать и запускать приложение в эмуляторе, что такое виджеты, какие есть основные виджеты для организации лэйаута приложения и как делать базовую стилизацию типа размера, отступов и цветов
+
+## День 2
