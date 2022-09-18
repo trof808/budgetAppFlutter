@@ -15,6 +15,9 @@ https://dribbble.com/shots/6259293-Sleep-Tracker-App/attachments
 
 ## Flutter
 
+## День 1
+За первый день, я разобрался как создавать и запускать приложение в эмуляторе, что такое виджеты, какие есть основные виджеты для организации лэйаута приложения и как делать базовую стилизацию типа размера, отступов и цветов
+
 1. Убрал MaterialApp. Изучаем основные виджеты Row и Column. Рассказать про них, особенность кастомизации, направление и тд
 https://docs.flutter.dev/development/ui/layout
  Note: Row and Column are basic primitive widgets for horizontal and vertical layouts—these low-level widgets allow for maximum customization. Flutter also offers specialized, higher level widgets that might be sufficient for your needs. For example, instead of Row you might prefer ListTile, an easy-to-use widget with properties for leading and trailing icons, and up to 3 lines of text. Instead of Column, you might prefer ListView, a column-like layout that automatically scrolls if its content is too long to fit the available space. For more information, see Common layout widgets.
@@ -34,7 +37,10 @@ https://stackoverflow.com/questions/52774921/space-between-columns-children-in-f
 Анимация
 Состояние приложения
 
-## День 1
-За первый день, я разобрался как создавать и запускать приложение в эмуляторе, что такое виджеты, какие есть основные виджеты для организации лэйаута приложения и как делать базовую стилизацию типа размера, отступов и цветов
-
 ## День 2
+1. Понял что мне не нравится шрифт. Долго выбирал
+https://fonts.google.com/specimen/Nunito?preview.text=Yor%20Finance%20Today&preview.text_type=custom
+https://docs.flutter.dev/cookbook/design/fonts
+2. Привел немного в порядок компонент статистики. Столкнулся с проблемой выравнивания, а оказалось просто, что я зафиксировал высоту блока, из-за этого текст не помещался
+3. Подключил иконки
+4. Делаю футер. Узнал как приклеить блок к низу. Есть несколько способ реализации sticky блока, я выбрал использование Positioned виджета. Но столкнулся с проблемой что Positioned может быть только в Stack. В итоге растянулся компонент _StatListState на всю высоту

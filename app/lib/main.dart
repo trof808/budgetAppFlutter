@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+        height: double.maxFinite,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
@@ -21,12 +24,22 @@ class MyApp extends StatelessWidget {
           ),
         ),
         padding: EdgeInsets.only(top: 40, left: 10, right: 10, bottom: 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.baseline,
-          textBaseline: TextBaseline.alphabetic,
+        child: Stack(
+          alignment: Alignment.centerLeft,
+          // crossAxisAlignment: CrossAxisAlignment.baseline,
+          // textBaseline: TextBaseline.alphabetic,
           children: [
             Header(),
             StatList(),
+            Positioned(
+              child: Align(
+                alignment: FractionalOffset.bottomCenter,
+                child: Text(
+                  "Text",
+                  textDirection: TextDirection.ltr,
+                ),
+              ),
+            )
           ],
         ));
   }
@@ -43,14 +56,20 @@ class Header extends StatelessWidget {
           Text(
             "Your Finance Today",
             textDirection: TextDirection.ltr,
-            style: TextStyle(fontSize: 48),
+            style: TextStyle(
+                fontSize: 48,
+                fontFamily: "Nunito",
+                fontWeight: FontWeight.w700),
           ),
           Container(
             margin: EdgeInsets.only(top: 15),
             child: Text(
               "September, 15",
               textDirection: TextDirection.ltr,
-              style: TextStyle(fontSize: 32),
+              style: TextStyle(
+                fontSize: 32,
+                fontFamily: "Nunito",
+              ),
             ),
           ),
         ],
@@ -70,7 +89,7 @@ class _StatListState extends State<StatList> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 32, left: 20, right: 20, bottom: 32),
+      padding: EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 10),
       margin: EdgeInsets.only(top: 35),
       decoration: BoxDecoration(
           color: Color.fromRGBO(0, 0, 0, .6),
@@ -87,9 +106,9 @@ class StatItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
+      padding: EdgeInsets.symmetric(vertical: 13),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         textDirection: TextDirection.ltr,
         children: [
           Column(
@@ -99,8 +118,16 @@ class StatItem extends StatelessWidget {
               Text(
                 "Пришло в этом месяце",
                 textDirection: TextDirection.ltr,
+                style: TextStyle(fontFamily: "Nunito", fontSize: 16),
               ),
-              Text("240 000 ₽", textDirection: TextDirection.ltr),
+              Text(
+                "240 000 ₽",
+                textDirection: TextDirection.ltr,
+                style: TextStyle(
+                    fontFamily: "Nunito",
+                    fontSize: 24,
+                    fontWeight: FontWeight.w500),
+              ),
             ],
           )
         ],
