@@ -1,6 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,24 +23,40 @@ class MyApp extends StatelessWidget {
           ),
         ),
         padding: EdgeInsets.only(top: 40, left: 10, right: 10, bottom: 0),
-        child: Stack(
-          alignment: Alignment.centerLeft,
-          // crossAxisAlignment: CrossAxisAlignment.baseline,
-          // textBaseline: TextBaseline.alphabetic,
+        child: Column(
+          // alignment: Alignment.centerLeft,
+          crossAxisAlignment: CrossAxisAlignment.baseline,
+          textBaseline: TextBaseline.alphabetic,
           children: [
             Header(),
             StatList(),
-            Positioned(
-              child: Align(
-                alignment: FractionalOffset.bottomCenter,
-                child: Text(
-                  "Text",
-                  textDirection: TextDirection.ltr,
-                ),
-              ),
-            )
+            Footer(),
           ],
         ));
+  }
+}
+
+class Footer extends StatelessWidget {
+  const Footer({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Flexible(
+      flex: 1,
+      child: Align(
+        alignment: FractionalOffset.bottomCenter,
+        child: Container(
+            height: 90,
+            width: double.infinity,
+            decoration: BoxDecoration(
+                color: Color.fromRGBO(0, 0, 0, .6),
+                borderRadius: BorderRadius.circular(25)),
+            child: Text(
+              "sdc",
+              textDirection: TextDirection.ltr,
+            )),
+      ),
+    );
   }
 }
 
